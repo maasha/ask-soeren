@@ -1,5 +1,12 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h1>AvatarPanel</h1>
+  <div class="border w-full">
+    <div class="w-80">
+      <img class="rotate-7" src="../assets/soeren-top-anonymous.jpg" alt="avatar top" />
+    </div>
+    <div class="w-80">
+      <img src="../assets/soeren-bottom.jpg" alt="avatar bottom" />
+    </div>
+  </div>
 </template>
