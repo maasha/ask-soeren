@@ -4,7 +4,7 @@ import ChatPanel from './components/ChatPanel.vue'
 </script>
 
 <template>
-  <div>
+  <div class="flex justify-between">
     <ChatPanel />
     <AvatarPanel />
   </div>
