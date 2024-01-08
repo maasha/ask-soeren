@@ -9,11 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@rushstack/eslint-patch": "^1.6.1",
+    "@vue/eslint-config-airbnb-with-typescript": "^8.0.0",
+    "prettier": "^3.1.1",
     "vue": "^3.3.11"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.2",
     "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.2",
     "eslint-plugin-vue": "^9.19.2",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
