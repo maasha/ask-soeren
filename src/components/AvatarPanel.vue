@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="border w-full">
+  <div class="border w-1/3">
     <div class="w-80">
       <img class="rotate-7" src="../assets/soeren-top-anonymous.jpg" alt="avatar top" />
     </div>
