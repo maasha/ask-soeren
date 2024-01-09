@@ -6,8 +6,6 @@
     <div class="w-80" :class="{ 'animated-jaw': blablabla }">
       <img id="avatar-bottom" src="../assets/soeren-bottom.jpg" alt="avatar bottom" />
     </div>
-
-    <p>{{ blablabla ? 'Enabled' : 'Disabled' }}</p>
   </div>
 </template>
 
