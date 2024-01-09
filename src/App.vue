@@ -1,9 +1,14 @@
 <script setup lang="ts">
+import { FormDataType } from './common/static/form-data.type'
 import AvatarPanel from './components/AvatarPanel.vue'
 import QuestionPanel from './components/QuestionPanel.vue'
 import AnswerPanel from './components/AnswerPanel.vue'
 
-const blablabla = false
+const props = defineProps(['blablabla'])
+const questionSubmitHandler = (formData: FormDataType) => {
+  console.log('Question Text:', formData.questionText)
+  console.log('Selected Style:', formData.selectedStyle)
+}
 </script>
 
 <template>
@@ -12,10 +17,10 @@ const blablabla = false
     <h2 data-testid="subtitle" class="text-center text-3xl">(... about Pharma & IT)</h2>
   </div>
 
-  <QuestionPanel />
+  <QuestionPanel @form-data="questionSubmitHandler" />
 
   <div class="px-24 pt-3 flex justify-center gap-12">
     <AnswerPanel />
-    <AvatarPanel :blablabla="blablabla" />
+    <AvatarPanel :blablabla="props.blablabla" />
   </div>
 </template>
