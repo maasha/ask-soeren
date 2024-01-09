@@ -21,6 +21,6 @@
     "noFallthroughCasesInSwitch": true,
     "allowJs": true
   },
-  "include": ["./**/*.js", "src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": ["./**/*.js", "src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "postcss.config.cjs"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

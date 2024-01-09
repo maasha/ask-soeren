@@ -14,6 +14,6 @@ import AnswerPanel from './components/AnswerPanel.vue'
 
   <div class="px-24 pt-3 flex justify-center gap-12">
     <AnswerPanel />
-    <AvatarPanel />
+    <AvatarPanel :blablabla="true" />
   </div>
 </template>
