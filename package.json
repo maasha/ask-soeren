@@ -8,7 +8,9 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "test": "vitest",
-    "test:watch": "vitest --watch"
+    "test:watch": "vitest --watch",
+    "tailwind": "npx tailwindcss -i ./src/input.css -o ./src/output.css",
+    "tailwind:watch": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
   },
   "dependencies": {
     "@rushstack/eslint-patch": "^1.6.1",

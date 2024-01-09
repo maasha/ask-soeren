@@ -7,7 +7,7 @@ const blablabla = false
 </script>
 
 <template>
-  <div class="p-8 flex justify-center items-baseline">
+  <div class="px-8 py-6 flex justify-center items-baseline">
     <h1 data-testid="title" class="text-center text-6xl pr-4">Ask Søren</h1>
     <h2 data-testid="subtitle" class="text-center text-3xl">(... about Pharma & IT)</h2>
   </div>
