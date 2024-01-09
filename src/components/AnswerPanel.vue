@@ -14,8 +14,8 @@ export default defineComponent({
      * The answer text to display.
      */
     answerText: {
-      type: String as PropType<string | undefined>,
-      default: undefined,
+      type: String as PropType<string | null>,
+      default: null,
     },
   },
 })
