@@ -2,6 +2,8 @@
 import AvatarPanel from './components/AvatarPanel.vue'
 import QuestionPanel from './components/QuestionPanel.vue'
 import AnswerPanel from './components/AnswerPanel.vue'
+
+const blablabla = true
 </script>
 
 <template>
@@ -14,6 +16,6 @@ import AnswerPanel from './components/AnswerPanel.vue'
 
   <div class="px-24 pt-3 flex justify-center gap-12">
     <AnswerPanel />
-    <AvatarPanel :blablabla="true" />
+    <AvatarPanel :blablabla="blablabla" />
   </div>
 </template>
