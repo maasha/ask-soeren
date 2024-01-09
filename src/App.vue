@@ -3,7 +3,7 @@ import AvatarPanel from './components/AvatarPanel.vue'
 import QuestionPanel from './components/QuestionPanel.vue'
 import AnswerPanel from './components/AnswerPanel.vue'
 
-const blablabla = true
+const blablabla = false
 </script>
 
 <template>

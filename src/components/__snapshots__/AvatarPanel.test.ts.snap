@@ -6,6 +6,7 @@ exports[`AvatarPanel > should match snapshot 1`] = `
     <div>
       <div
         class="w-1/3 ml-8"
+        data-testid="avatar-panel"
         data-v-4e7fa8f4=""
       >
         <div
@@ -36,6 +37,7 @@ exports[`AvatarPanel > should match snapshot 1`] = `
   "container": <div>
     <div
       class="w-1/3 ml-8"
+      data-testid="avatar-panel"
       data-v-4e7fa8f4=""
     >
       <div
