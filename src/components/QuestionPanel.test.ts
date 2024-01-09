@@ -35,29 +35,29 @@ describe('QuestionPanel', () => {
 
     it('should have specific options', () => {
       render(QuestionPanelVue)
-      const option1 = screen.getByText('Legalese')
-      const option2 = screen.getByText('British High Class')
-      const option3 = screen.getByText('New York Gansta')
+      const legalese = screen.getByText('Legalese')
+      const british = screen.getByText('British High Class')
+      const gangsta = screen.getByText('New York Gangsta')
 
-      expect(option1).toBeDefined()
-      expect(option2).toBeDefined()
-      expect(option3).toBeDefined()
+      expect(legalese).toBeDefined()
+      expect(british).toBeDefined()
+      expect(gangsta).toBeDefined()
     })
 
     it('should have a default option', () => {
       render(QuestionPanelVue)
       const element = screen.getByTestId('style-select') as HTMLSelectElement
 
-      expect(element.value).toBe('option1')
+      expect(element.value).toBe('legalese')
     })
 
     it('should be possible to change the option', async () => {
       render(QuestionPanelVue)
       const element = screen.getByTestId('style-select') as HTMLSelectElement
 
-      await fireEvent.change(element, { target: { value: 'option2' } })
+      await fireEvent.change(element, { target: { value: 'british' } })
 
-      expect(element.value).toBe('option2')
+      expect(element.value).toBe('british')
     })
   })
 })

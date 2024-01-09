@@ -15,9 +15,9 @@
           <label for="styleSelect" class="text-xl pr-2">Select answer style:</label>
           <select id="styleSelect" data-testid="style-select" class="mt-2 p-2 border text-xl">
             <option value="" disabled>Select answer style</option>
-            <option value="option1">Legalese</option>
-            <option value="option2">British High Class</option>
-            <option value="option3">New York Gansta</option>
+            <option value="legalese">Legalese</option>
+            <option value="british">British High Class</option>
+            <option value="gangsta">New York Gangsta</option>
           </select>
         </div>
 
