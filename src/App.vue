@@ -4,7 +4,17 @@ import AvatarPanel from './components/AvatarPanel.vue'
 import QuestionPanel from './components/QuestionPanel.vue'
 import AnswerPanel from './components/AnswerPanel.vue'
 
-const props = defineProps(['blablabla'])
+const props = defineProps({
+  blablabla: {
+    type: Boolean,
+    default: false,
+  },
+  answerText: {
+    type: String,
+    default: undefined,
+  },
+})
+
 const questionSubmitHandler = (formData: FormDataType) => {
   console.log('Question Text:', formData.questionText)
   console.log('Selected Style:', formData.selectedStyle)
@@ -20,7 +30,7 @@ const questionSubmitHandler = (formData: FormDataType) => {
   <QuestionPanel @form-data="questionSubmitHandler" />
 
   <div class="px-24 pt-3 flex justify-center gap-12">
-    <AnswerPanel />
+    <AnswerPanel :answerText="props.answerText" />
     <AvatarPanel :blablabla="props.blablabla" />
   </div>
 </template>
