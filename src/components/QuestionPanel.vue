@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4 flex justify-center">
+  <div data-testid="question-panel" class="p-4 flex justify-center">
     <div class="w-1/2">
       <form @submit.prevent="">
         <label for="questionInput" class="text-3xl">Post your question</label>

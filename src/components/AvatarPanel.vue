@@ -1,5 +1,5 @@
 <template>
-  <div class="w-1/3 ml-8">
+  <div data-testid="avatar-panel" class="w-1/3 ml-8">
     <div class="w-80" :class="{ 'animated-head': blablabla }">
       <img id="avatar-top" src="../assets/soeren-top-anonymous.jpg" alt="avatar top" />
     </div>
