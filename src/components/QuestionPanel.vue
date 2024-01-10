@@ -1,3 +1,31 @@
+<script setup lang="ts">
+import { ref, computed, defineEmits } from 'vue'
+import { AnswerStyleType } from '../common/static/answer-style.type'
+import { FormDataType } from '../common/static/form-data.type'
+
+const emit = defineEmits(['form-data'])
+const questionText = ref('')
+const selectedStyle = ref('legalese')
+
+const isValidQuestion = computed(() => {
+  return questionText.value.trim() !== ''
+})
+
+const submitForm = () => {
+  if (!isValidQuestion.value) {
+    alert('Please enter a valid question!')
+    return
+  }
+
+  const formData: FormDataType = {
+    questionText: questionText.value,
+    selectedStyle: selectedStyle.value as AnswerStyleType,
+  }
+
+  emit('form-data', formData)
+}
+</script>
+
 <template>
   <div data-testid="question-panel" class="p-4 flex justify-center">
     <div class="w-1/2">
@@ -38,42 +66,3 @@
     </div>
   </div>
 </template>
-
-<script lang="ts">
-import { AnswerStyleType } from '../common/static/answer-style.type'
-import { FormDataType } from '../common/static/form-data.type'
-
-/**
- * Panel to display the question form.
- */
-export default {
-  data() {
-    return {
-      // Data properties to bind to form elements
-      questionText: '',
-      selectedStyle: 'legalese',
-    }
-  },
-  computed: {
-    isValidQuestion() {
-      // Add validation logic here
-      return this.questionText.trim() !== ''
-    },
-  },
-  methods: {
-    submitForm() {
-      if (!this.isValidQuestion) {
-        alert('Please enter a valid question!')
-        return
-      }
-
-      const formData: FormDataType = {
-        questionText: this.questionText,
-        selectedStyle: this.selectedStyle as AnswerStyleType,
-      }
-
-      this.$emit('form-data', formData)
-    },
-  },
-}
-</script>
