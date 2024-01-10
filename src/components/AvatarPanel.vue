@@ -1,32 +1,24 @@
+<script setup lang="ts">
+import { PropType, defineProps } from 'vue'
+
+const props = defineProps({
+  blablabla: {
+    type: Boolean as PropType<boolean>,
+    default: false,
+  },
+})
+</script>
+
 <template>
   <div data-testid="avatar-panel" class="w-1/3 ml-8 h-96">
-    <div class="w-60" :class="{ 'animated-head': blablabla }">
+    <div class="w-60" :class="{ 'animated-head': props.blablabla }">
       <img id="avatar-top" src="../assets/soeren-top-anonymous.jpg" alt="avatar top" />
     </div>
-    <div class="w-60" :class="{ 'animated-jaw': blablabla }">
+    <div class="w-60" :class="{ 'animated-jaw': props.blablabla }">
       <img id="avatar-bottom" src="../assets/soeren-bottom.jpg" alt="avatar bottom" />
     </div>
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
-
-/**
- * Panel to display the animated Søren avatar.
- */
-export default defineComponent({
-  props: {
-    /**
-     * Flag indicating that the avatar must be talking.
-     */
-    blablabla: {
-      type: Boolean as PropType<boolean>,
-      required: true,
-    },
-  },
-})
-</script>
 
 <style scoped>
 @keyframes moveJaw {
