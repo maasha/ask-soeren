@@ -47,18 +47,18 @@ describe('QuestionPanel', () => {
 
     test('should have a default option', () => {
       render(QuestionPanel)
-      const element = screen.getByTestId('style-select') as HTMLSelectElement
+      const element = screen.getByTestId('style-select')
 
-      expect(element.value).toBe('legalese')
+      expect((element as HTMLSelectElement).value).toBe('legalese')
     })
 
     test('should be possible to change the option', async () => {
       render(QuestionPanel)
-      const element = screen.getByTestId('style-select') as HTMLSelectElement
+      const element = screen.getByTestId('style-select')
 
       await fireEvent.change(element, { target: { value: 'british' } })
 
-      expect(element.value).toBe('british')
+      expect((element as HTMLSelectElement).value).toBe('british')
     })
   })
 
