@@ -40,6 +40,7 @@
 </template>
 
 <script lang="ts">
+import { AnswerStyleType } from '../common/static/answer-style.type'
 import { FormDataType } from '../common/static/form-data.type'
 
 export default {
@@ -65,7 +66,7 @@ export default {
 
       const formData: FormDataType = {
         questionText: this.questionText,
-        selectedStyle: this.selectedStyle as 'legalese' | 'british' | 'gangsta',
+        selectedStyle: this.selectedStyle as AnswerStyleType,
       }
 
       this.$emit('form-data', formData)

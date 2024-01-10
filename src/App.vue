@@ -5,13 +5,7 @@ import { FormDataType } from './common/static/form-data.type'
 import AvatarPanel from './components/AvatarPanel.vue'
 import QuestionPanel from './components/QuestionPanel.vue'
 import AnswerPanel from './components/AnswerPanel.vue'
-
-const props = defineProps({
-  blablabla: {
-    type: Boolean,
-    default: false,
-  },
-})
+import { AnswerStyleType } from './common/static/answer-style.type'
 
 const openai = new OpenAI({
   apiKey: import.meta.env.VITE_API_KEY,
@@ -19,6 +13,7 @@ const openai = new OpenAI({
 })
 
 const answerText = ref<string | null>()
+const blablabla = ref<boolean>(false)
 
 const askOpenAI = async (userQuestion: string) => {
   const stream = await openai.beta.chat.completions.stream({
@@ -27,18 +22,42 @@ const askOpenAI = async (userQuestion: string) => {
     stream: true,
   })
 
+  blablabla.value = true
+
   stream.on('content', (delta) => {
     answerText.value ??= ''
     answerText.value += delta
   })
 
-  const chatCompletion = await stream.finalChatCompletion()
+  await stream.finalChatCompletion()
 
-  console.log({ chatCompletion })
+  blablabla.value = false
+}
+
+const formulateQuestion = (questionText: string, selectedStyle: AnswerStyleType) => {
+  let question = 'Answer the this in the most complicated way possible using the style of'
+
+  switch (selectedStyle) {
+    case 'legalese':
+      question += ' impossible to understand law language'
+      break
+    case 'british':
+      question += ' upper class british english'
+      break
+    case 'gangsta':
+      question += ' New York gangsta slang'
+      break
+
+    default:
+      throw new Error(`Invalid answer style selected: ${selectedStyle}`)
+  }
+
+  return `${question}: ${questionText}`
 }
 
 const questionSubmitHandler = async (formData: FormDataType) => {
-  const userQuestion = formData.questionText
+  answerText.value = ''
+  const userQuestion = formulateQuestion(formData.questionText, formData.selectedStyle)
   await askOpenAI(userQuestion)
 }
 </script>
@@ -53,6 +72,6 @@ const questionSubmitHandler = async (formData: FormDataType) => {
 
   <div class="px-24 pt-3 flex justify-center gap-12">
     <AnswerPanel :answerText="answerText" />
-    <AvatarPanel :blablabla="props.blablabla" />
+    <AvatarPanel :blablabla="blablabla" />
   </div>
 </template>
