@@ -4,37 +4,37 @@ import QuestionPanel from './QuestionPanel.vue'
 
 describe('QuestionPanel', () => {
   describe('the question field', () => {
-    it('should have a label', () => {
+    test('should have a label', () => {
       render(QuestionPanel)
       expect(screen.getByLabelText('Post your question')).toBeDefined()
     })
 
-    it('should have a text input', () => {
+    test('should have a text input', () => {
       render(QuestionPanel)
       const element = screen.getByTestId('question-input')
 
       expect(element).toBeInstanceOf(HTMLInputElement)
     })
 
-    it('should have a input field placeholder', () => {
+    test('should have a input field placeholder', () => {
       render(QuestionPanel)
       expect(screen.findByPlaceholderText('here...')).toBeDefined()
     })
   })
 
   describe('the answer style selector', () => {
-    it('should have a label', () => {
+    test('should have a label', () => {
       render(QuestionPanel)
       expect(screen.getByLabelText('Select answer style:')).toBeDefined()
     })
 
-    it('should have a select input', () => {
+    test('should have a select input', () => {
       render(QuestionPanel)
       const element = screen.getByTestId('style-select')
       expect(element).toBeInstanceOf(HTMLSelectElement)
     })
 
-    it('should have specific options', () => {
+    test('should have specific options', () => {
       render(QuestionPanel)
       const legalese = screen.getByText('Legalese')
       const british = screen.getByText('British High Class')
@@ -45,14 +45,14 @@ describe('QuestionPanel', () => {
       expect(gangsta).toBeDefined()
     })
 
-    it('should have a default option', () => {
+    test('should have a default option', () => {
       render(QuestionPanel)
       const element = screen.getByTestId('style-select') as HTMLSelectElement
 
       expect(element.value).toBe('legalese')
     })
 
-    it('should be possible to change the option', async () => {
+    test('should be possible to change the option', async () => {
       render(QuestionPanel)
       const element = screen.getByTestId('style-select') as HTMLSelectElement
 
@@ -63,7 +63,7 @@ describe('QuestionPanel', () => {
   })
 
   describe('form submission', () => {
-    it('emits form data when submitted with a valid question', async () => {
+    test('emits form data when submitted with a valid question', async () => {
       const wrapper = mount(QuestionPanel)
 
       await wrapper.setData({
@@ -84,7 +84,7 @@ describe('QuestionPanel', () => {
       })
     })
 
-    it('does not emit form data when submitted with an invalid question', async () => {
+    test('does not emit form data when submitted with an invalid question', async () => {
       const wrapper = mount(QuestionPanel)
 
       await wrapper.setData({

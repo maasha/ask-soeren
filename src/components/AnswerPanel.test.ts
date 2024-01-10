@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/vue'
 import AnswerPanel from './AnswerPanel.vue'
 
 describe('AnswerPanel', () => {
-  it('renders "Søren says" if answerText is provided', async () => {
+  test('renders "Søren says" if answerText is provided', async () => {
     const answerText = 'This is the answer text.'
 
     render(AnswerPanel, {
@@ -12,10 +12,10 @@ describe('AnswerPanel', () => {
       },
     })
 
-    expect(screen.findByText(answerText)).resolves.toBeDefined()
+    await expect(screen.findByText(answerText)).resolves.toBeDefined()
   })
 
-  it('renders answer text if answerText is provided', async () => {
+  test('renders answer text if answerText is provided', async () => {
     const answerText = 'This is the answer text.'
 
     render(AnswerPanel, {
@@ -24,10 +24,10 @@ describe('AnswerPanel', () => {
       },
     })
 
-    expect(screen.findByText('Søren says:')).resolves.toBeDefined()
+    await expect(screen.findByText('Søren says:')).resolves.toBeDefined()
   })
 
-  it('does not render answer text when answerText is null', async () => {
+  test('does not render answer text when answerText is null', async () => {
     // Render the component with null answerText
     render(AnswerPanel, {
       props: {
