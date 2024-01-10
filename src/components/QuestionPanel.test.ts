@@ -66,10 +66,8 @@ describe('QuestionPanel', () => {
     test('emits form data when submitted with a valid question', async () => {
       const wrapper = mount(QuestionPanel)
 
-      await wrapper.setData({
-        questionText: 'Test Question',
-        selectedStyle: 'legalese',
-      })
+      ;(wrapper.vm as unknown as any).questionText = 'Test Question'
+      ;(wrapper.vm as unknown as any).selectedStyle = 'legalese'
 
       await wrapper.find('form').trigger('submit.prevent')
       await wrapper.vm.$nextTick()
@@ -87,10 +85,8 @@ describe('QuestionPanel', () => {
     test('does not emit form data when submitted with an invalid question', async () => {
       const wrapper = mount(QuestionPanel)
 
-      await wrapper.setData({
-        questionText: '',
-        selectedStyle: 'legalese',
-      })
+      ;(wrapper.vm as unknown as any).questionText = ''
+      ;(wrapper.vm as unknown as any).selectedStyle = 'legalese'
 
       await wrapper.find('form').trigger('submit.prevent')
       await wrapper.vm.$nextTick()
