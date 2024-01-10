@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import OpenAI from 'openai'
 import { ref } from 'vue'
-import { FormDataType } from '../../common/static/form-data.type'
-import AvatarPanel from '../AvatarPanel.vue'
-import QuestionPanel from '../QuestionPanel.vue'
-import AnswerPanel from '../AnswerPanel.vue'
-import { AnswerStyleType } from '../../common/static/answer-style.type'
+import { FormDataType } from '../common/static/form-data.type'
+import AvatarPanel from './AvatarPanel.vue'
+import QuestionPanel from './QuestionPanel.vue'
+import AnswerPanel from './AnswerPanel.vue'
+import { AnswerStyleType } from '../common/static/answer-style.type'
 
 const openai = new OpenAI({
   apiKey: import.meta.env.VITE_API_KEY,

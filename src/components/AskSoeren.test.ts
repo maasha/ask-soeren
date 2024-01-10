@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/vue'
-import AskSoeren from '../AskSoeren.vue'
+import AskSoeren from './AskSoeren.vue'
 
 describe('AskSoeren', () => {
   test('should have correct title', () => {
