@@ -13,25 +13,33 @@ const props = defineProps({
   },
 })
 
-const answerText = ref<string | null>()
-
 const openai = new OpenAI({
   apiKey: import.meta.env.VITE_API_KEY,
   dangerouslyAllowBrowser: true,
 })
 
+const answerText = ref<string | null>()
+
 const askOpenAI = async (userQuestion: string) => {
-  const chatCompletion = await openai.chat.completions.create({
+  const stream = await openai.beta.chat.completions.stream({
     messages: [{ role: 'user', content: userQuestion }],
     model: 'gpt-3.5-turbo',
+    stream: true,
   })
 
-  return chatCompletion.choices[0].message.content
+  stream.on('content', (delta) => {
+    answerText.value ??= ''
+    answerText.value += delta
+  })
+
+  const chatCompletion = await stream.finalChatCompletion()
+
+  console.log({ chatCompletion })
 }
 
 const questionSubmitHandler = async (formData: FormDataType) => {
   const userQuestion = formData.questionText
-  answerText.value = await askOpenAI(userQuestion)
+  await askOpenAI(userQuestion)
 }
 </script>
 
