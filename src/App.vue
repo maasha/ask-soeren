@@ -70,7 +70,7 @@ const questionSubmitHandler = async (formData: FormDataType) => {
 
   <QuestionPanel @form-data="questionSubmitHandler" />
 
-  <div class="px-24 pt-3 flex justify-center gap-12">
+  <div class="px-16 pt-3 flex justify-center gap-12">
     <AnswerPanel :answerText="answerText" />
     <AvatarPanel :blablabla="blablabla" />
   </div>

@@ -1,9 +1,9 @@
 <template>
-  <div data-testid="avatar-panel" class="w-1/3 ml-8">
-    <div class="w-80" :class="{ 'animated-head': blablabla }">
+  <div data-testid="avatar-panel" class="w-1/3 ml-8 h-96">
+    <div class="w-60" :class="{ 'animated-head': blablabla }">
       <img id="avatar-top" src="../assets/soeren-top-anonymous.jpg" alt="avatar top" />
     </div>
-    <div class="w-80" :class="{ 'animated-jaw': blablabla }">
+    <div class="w-60" :class="{ 'animated-jaw': blablabla }">
       <img id="avatar-bottom" src="../assets/soeren-bottom.jpg" alt="avatar bottom" />
     </div>
   </div>
