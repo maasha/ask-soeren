@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/vue'
 import { mount } from '@vue/test-utils'
-import QuestionPanel from './QuestionPanel.vue'
+import QuestionPanel from '../components/QuestionPanel.vue'
 
 describe('QuestionPanel', () => {
   describe('the question field', () => {
