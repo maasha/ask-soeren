@@ -11,6 +11,9 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 
+/**
+ * Panel to display the answer from Søren.
+ */
 export default defineComponent({
   props: {
     /**

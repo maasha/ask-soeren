@@ -12,6 +12,9 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 
+/**
+ * Panel to display the animated Søren avatar.
+ */
 export default defineComponent({
   props: {
     /**

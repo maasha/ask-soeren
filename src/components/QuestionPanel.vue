@@ -43,6 +43,9 @@
 import { AnswerStyleType } from '../common/static/answer-style.type'
 import { FormDataType } from '../common/static/form-data.type'
 
+/**
+ * Panel to display the question form.
+ */
 export default {
   data() {
     return {
