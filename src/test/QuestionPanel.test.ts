@@ -1,3 +1,4 @@
+import { describe, it } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/vue'
 import { mount } from '@vue/test-utils'
 import QuestionPanel from '../components/QuestionPanel.vue'

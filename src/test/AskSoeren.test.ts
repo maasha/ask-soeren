@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/vue'
+import { describe, it } from 'vitest'
 import AskSoeren from '../components/AskSoeren.vue'
 
 describe('AskSoeren', () => {

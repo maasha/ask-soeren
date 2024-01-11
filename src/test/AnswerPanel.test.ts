@@ -1,5 +1,7 @@
 // Import necessary functions from testing library
 import { render, screen } from '@testing-library/vue'
+import { describe, it } from 'vitest'
+
 import AnswerPanel from '../components/AnswerPanel.vue'
 
 describe('AnswerPanel', () => {
