@@ -14,7 +14,7 @@ const props = defineProps({
     data-testid="answer-panel"
     class="border w-1/3 p-4 max-h-96 overflow-y-auto flex flex-col-reverse"
   >
-    <p v-if="answerText" class="text-xl mt-5">{{ props.answerText }}</p>
-    <h3 v-if="answerText" class="text-3xl mt-5">Søren says:</h3>
+    <p v-if="answerText" data-testid="answer-text" class="text-xl mt-5">{{ props.answerText }}</p>
+    <h3 v-if="answerText" data-testid="answer-heading" class="text-3xl mt-5">Søren says:</h3>
   </div>
 </template>

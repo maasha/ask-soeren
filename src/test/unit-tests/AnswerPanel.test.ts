@@ -1,6 +1,6 @@
 // Import necessary functions from testing library
 import { render, screen } from '@testing-library/vue'
-import AnswerPanel from '../components/AnswerPanel.vue'
+import AnswerPanel from '../../components/AnswerPanel.vue'
 
 describe('AnswerPanel', () => {
   test('renders "Søren says" if answerText is provided', async () => {
