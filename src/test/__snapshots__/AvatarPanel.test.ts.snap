@@ -17,7 +17,7 @@ exports[`AvatarPanel > should match snapshot 1`] = `
             alt="avatar top"
             data-v-4e7fa8f4=""
             id="avatar-top"
-            src="/src/assets/soeren-top-anonymous.jpg"
+            src="/src/assets/soeren-top.jpg"
           />
         </div>
         <div
@@ -48,7 +48,7 @@ exports[`AvatarPanel > should match snapshot 1`] = `
           alt="avatar top"
           data-v-4e7fa8f4=""
           id="avatar-top"
-          src="/src/assets/soeren-top-anonymous.jpg"
+          src="/src/assets/soeren-top.jpg"
         />
       </div>
       <div
