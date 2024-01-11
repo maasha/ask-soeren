@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 describe('AskSoeren', () => {
   const url = 'http://localhost:5173/'
 
