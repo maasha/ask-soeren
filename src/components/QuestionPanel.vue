@@ -56,6 +56,7 @@ const submitForm = () => {
 
         <footer class="pt-6 flex justify-center">
           <button
+            data-testid="submit-button"
             class="bg-blue-500 hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-2 px-4 rounded"
             type="submit"
           >

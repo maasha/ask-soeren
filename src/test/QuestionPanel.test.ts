@@ -62,7 +62,21 @@ describe('QuestionPanel', () => {
     })
   })
 
-  describe('form submission', () => {
+  describe('the submit button', () => {
+    test('should have a button to submit the form', () => {
+      render(QuestionPanel)
+      const element = screen.getByTestId('submit-button')
+
+      expect(element).toBeInstanceOf(HTMLButtonElement)
+    })
+
+    test('should have button correct button text', () => {
+      render(QuestionPanel)
+      const element = screen.getByTestId('submit-button')
+
+      expect(element.textContent?.trim()).toBe('Ask Søren')
+    })
+
     test('emits form data when submitted with a valid question', async () => {
       const wrapper = mount(QuestionPanel)
 
