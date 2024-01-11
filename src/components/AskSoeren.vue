@@ -30,8 +30,6 @@ const askOpenAI = async (userQuestion: string) => {
   })
 
   await stream.finalChatCompletion()
-
-  blablabla.value = false
 }
 
 const formulateQuestion = (questionText: string, selectedStyle: AnswerStyleType) => {
