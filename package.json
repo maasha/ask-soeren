@@ -11,6 +11,7 @@
     "test:watch": "vitest --watch",
     "tailwind": "npx tailwindcss -i ./src/input.css -o ./src/output.css",
     "tailwind:watch": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+    "cypress:run": "cypress run",
     "cypress:open": "cypress open"
   },
   "dependencies": {
