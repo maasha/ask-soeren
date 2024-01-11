@@ -22,6 +22,11 @@
     "noFallthroughCasesInSwitch": true,
     "allowJs": true
   },
-  "include": ["./**/*.js", "src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "postcss.config.cjs"],
+  "include": [
+    "postcss.config.cjs",
+    "src/**/*.ts", 
+    "src/**/*.vue"
+  ],
+  "exclude": ["cypress/**/*.ts", "cypress.config.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
