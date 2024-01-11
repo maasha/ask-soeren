@@ -58,7 +58,13 @@ const formulateQuestion = (questionText: string, selectedStyle: AnswerStyleType)
 const questionSubmitHandler = async (formData: FormDataType) => {
   answerText.value = ''
   const userQuestion = formulateQuestion(formData.questionText, formData.selectedStyle)
-  await askOpenAI(userQuestion)
+  try {
+    await askOpenAI(userQuestion)
+  } catch (error) {
+    answerText.value = `Sorry, I am not feeling well today: ${JSON.stringify(error)}`
+  } finally {
+    blablabla.value = false
+  }
 }
 </script>
 
